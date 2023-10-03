@@ -1,0 +1,90 @@
+<div>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</div>
+
+<div class="img">
+    <img src="file:livemaster.jpg">
+</div>
+
+<div class="table">
+	<div class="table-caption">Таблица студентов</div>
+	<div class="table-colgroup">
+		<div class="table-col" style="width: 5%"></div>
+		<div class="table-col" style="width: 20%"></div>
+		<div class="table-col" style="width: 20%"></div>
+	</div>
+	<div class="table-thead">    
+		<div class="table-tr">
+			<div class="table-th"># п/п</div>
+			<div class="table-th">Имя Фамилия</div>
+			<div class="table-th">Направление обучения</div>
+		</div>
+	</div>
+	<div class="table-tbody"> 
+		<div class="table-tr">
+			<div class="table-th">1</div>
+			<div class="table-td">Анна Акула
+                <button type="button" name="submit_button" value="main_button">
+                    <!--- <div style="text-align: center;"> --->
+                    <a href="#openModal">Доп. инфо</a>
+                    <div id="openModal" class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Дополнительная информация</h3>
+                            <a href="#close" title="Close" class="close">Закрыть</a>
+                        </div>
+                        <div class="modal-body">
+                            <div class="table">
+                                <div class="table-colgroup">
+                                    <div class="table-col" style="width: 10%"></div>
+                                    <div class="table-col" style="width: 30%"></div>
+                                </div>
+                                <div class="table-thead">    
+                                    <div class="table-tr">
+                                        <div class="table-th">Дата рождения</div>
+                                        <div class="table-th">Ссылка на личное дело</div>
+                                    </div>
+                                </div>
+                                <div class="table-tbody"> 
+                                    <div class="table-tr">
+                                        <div class="table-th">31.07.1997</div>
+                                        <div class="table-td">Анна Акула</div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+			<div class="table-td">Фронт</div>
+		</div>
+		<div class="table-tr">
+			<div class="table-th">2</div>
+			<div class="table-td">Виталий Касатка</div>
+			<div class="table-td">Дизайн</div>
+		</div>
+		<div class="table-tr">
+			<div class="table-th">3</div>
+			<div class="table-td">Алексей Медуза</div>
+			<div class="table-td">Бэк</div>
+		</div>
+	</div>
+</div>   
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
+      console.log(scrollbar);
+      document.querySelector('[href="#openModal"]').addEventListener('click', function () {
+        document.body.style.overflow = 'hidden';
+        document.querySelector('#openModal').style.marginLeft = scrollbar;
+      });
+      document.querySelector('[href="#close"]').addEventListener('click', function () {
+        document.body.style.overflow = 'visible';
+        document.querySelector('#openModal').style.marginLeft = '0px';
+      });
+    });
+  </script>
